@@ -5,7 +5,7 @@ export default {
     active: Boolean,
     duration: {
       type: Number,
-      default: 500,
+      default: 200,
     },
     tag: {
       type: String,
@@ -75,6 +75,7 @@ export default {
       if (this.active) {
         this.hidden = false
         this.$emit('open-start')
+
         if (this.initial) {
           this.setHeight('0px', () => this.el.scrollHeight + 'px')
         }
@@ -93,7 +94,10 @@ export default {
     },
 
     setHeight(temp, afterRelayout) {
-      this.style = { height: temp }
+      this.style = {
+        height: temp,
+        opacity: (parseInt(temp) > 0) ? '1': '0',
+      }
 
       this.asap(() => {
         // force relayout so the animation will run
@@ -102,8 +106,10 @@ export default {
         this.style = {
           height: afterRelayout(),
           overflow: 'hidden',
-          'transition-property': 'height',
+          'transition-property': 'height, opacity',
           'transition-duration': this.duration + 'ms',
+          'transition-timing-function': 'ease-in',
+          opacity: (parseInt(afterRelayout()) > 0) ? 1 : 0,
         }
       })
     },
@@ -113,10 +119,13 @@ export default {
       if (event.target !== this.el) return
 
       if (this.active) {
-        this.style = {}
+        this.style = {
+          // opacity: 1
+        }
         this.$emit('open-end')
       } else {
         this.style = {
+          opacity: '0',
           height: '0',
           overflow: 'hidden',
         }
