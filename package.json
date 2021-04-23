@@ -4,7 +4,7 @@
   "description": "Like jQuery's slideUp/slideDown, but for Vue!",
   "source": "src/slide-up-down.js",
   "amdName": "VueSlideUpDown",
-  "main": "src/vue-slide-up-down.js",
+  "main": "src/slide-up-down.js",
   "files": [
     "src"
   ],
