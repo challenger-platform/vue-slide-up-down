@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danieldiekmeier/vue-slide-up-down.git"
+    "url": "git+https://github.com/challenger-platform/vue-slide-up-down.git"
   },
   "keywords": [
     "vue",
@@ -34,9 +34,9 @@
   "author": "Daniel Diekmeier",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danieldiekmeier/vue-slide-up-down/issues"
+    "url": "https://github.com/challenger-platform/vue-slide-up-down/issues"
   },
-  "homepage": "https://github.com/danieldiekmeier/vue-slide-up-down#readme",
+  "homepage": "https://github.com/challenger-platform/vue-slide-up-down#readme",
   "devDependencies": {
     "microbundle": "^0.11.0",
     "prettier": "^1.19.1"
